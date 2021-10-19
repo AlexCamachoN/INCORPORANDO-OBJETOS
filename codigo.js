@@ -10,32 +10,28 @@ class plasticArtist {
         this.nacionalidad=nacionalidad;
 
     }
-
-
+    //DECLARANDO METODO:
+    tieneExperiencia(anio) {
+        if((anio >= 15) && (anio <= 3)||(anio >= 15) && (anio <= 20)) {
+            return true; 
+        }
+        return false;
+    }
 }
-
 const artist1 = new plasticArtist("Alex", "pintura", "10 años", "2 expo individuales", "Peru")
 const artist2 = new plasticArtist("Arnaldo", "escultor", "15 años", "1 expo individuales", "Colombia")
 const artist3 = new plasticArtist("Luis", "grabador", "5 años", "5 expo individuales", "chile")
 const artist4 = new plasticArtist("Pedro", "muralista", "3 años", "1 expo individuales", "mexico")
 const artist5 = new plasticArtist("Victor", "retratista", "4 años", "11 expo individuales", "Argentina")
-
-console.log(artist1);
-console.log(artist2.nacionalidad);  //al mencionar nacionalidad desde this solo se visualizara ese aspecto.
-
-
-//----------------EJERCICIO 2---
-//ciclo para ingresar cantidad de artistas plasticos-------------
-let infoArtistas = "";
-for (i = 1; i <= 3; i++) {
-    let artista = new plasticArtist(prompt("Nombre del artista " + i), prompt("Que es espacialidad es en arte"), prompt("año de experiencia"), prompt("nro de expo"), prompt("nacionalidad"));
-    //console.log(artista);
-    infoArtistas = infoArtistas + " " + artista.nombre + " " + artista.especialidad + " " + artista.anioexperiencia + " " + artista.exposiciones + "" + artista.nacionalidad +"\n";
+for (let index = 0; index < 5 ; index++) {
+    let entrada = parseInt(prompt("INGRESAR año de experiencia del artista "));
+    if(artist1.tieneExperiencia(entrada)){
+        alert("EL ARTISTA TIENE  "+entrada+ "AÑOS DE EXPERIENCIA DEMOSTRADOS")
+    }else{
+        alert("El artista no tiene "+entrada+ "AÑOS DE EXPERIENCIA DEMOSTRADO")
+    }
 }
 
-alert("los datos ingresadod de los artistas son:\n" + infoArtistas)
-// console.log("Los datos de las Artistas ingresados son: "); //TAMBIEN SE PUEDE PEDIR POR CONSOLE
-// console.log(infoArtistas);
 
 
 
